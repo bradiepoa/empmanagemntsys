@@ -6,7 +6,7 @@ app.secret_key = "Secrete Key"
 app.config['SQLALCHEMY_DATABASE_URL'] = 'mysql://root:''@localhost/crude'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
-db = SQLAlchemy(APP)
+db = SQLAlchemy(app)
 
 @app.route('/')
 def index():
