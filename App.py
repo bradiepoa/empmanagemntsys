@@ -17,6 +17,11 @@ class Data(db.Model):
     name = db.Column(db.string(100))
     email = db.Column(db.string(100))
     phone = db.Column(db.string(100))
+    # constructor
+    def __init__(self, name, email, phone):
+        self.name = name
+        self.email = email
+        self.phone = phone
 
 @app.route('/')
 def index():
