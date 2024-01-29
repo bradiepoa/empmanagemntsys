@@ -16,6 +16,7 @@ class Data(db.Model):
     id = db.Column(db.Integer, primary_key = True)
     name = db.Column(db.string(100))
     email = db.Column(db.string(100))
+    phone = db.Column(db.string(100))
 
 @app.route('/')
 def index():
