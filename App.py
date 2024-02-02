@@ -30,7 +30,8 @@ class Data(db.Model):
 
 @app.route('/')
 def Index():
-    return render_template("index.html")
+    all_data = Data.query.all()
+    return render_template("index.html", employee = all_data)
 
 
 # aroute
