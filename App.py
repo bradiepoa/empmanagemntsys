@@ -1,8 +1,6 @@
 from flask import Flask, render_template, request,redirect, url_for, flash
 from flask_sqlalchemy import SQLAlchemy
 
-
-
 app = Flask(__name__)
 
 # config db connection
@@ -11,11 +9,8 @@ app.secret_key = "Secret Key"
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:''@localhost/crude'
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-
 db = SQLAlchemy(app)
 # end of db connection
-
-
 # creating a database tables
 class Data(db.Model):
     id = db.Column(db.Integer, primary_key = True)
@@ -32,7 +27,6 @@ class Data(db.Model):
 def Index():
     all_data = Data.query.all()
     return render_template("index.html", employee = all_data)
-
 
 # aroute
 @app.route('/insert', methods = ['POST'])
